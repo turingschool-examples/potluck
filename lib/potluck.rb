@@ -1,5 +1,5 @@
 class Potluck
-  attr_reader :date, :dishes
+  attr_reader :date, :dishes, :menu
 
   def initialize(date)
     @date = date
@@ -22,8 +22,18 @@ class Potluck
       menu[dish.category] << dish.name
     end
     menu
-
   end
+
+  def ratio(course)
+    count = 0
+    @dishes.each do |dish|
+      count +=1 if dish.category == course
+    end
+      (count / @dishes.count.to_f) * 100
+  end
+
+
+
 
 
 
