@@ -6,7 +6,8 @@ class Potluck
   attr_accessor :date,
                 :dishes,
                 :name,
-                :category
+                :category,
+                :dishes_by_category
 
   def initialize(date)
     @date = date
@@ -22,7 +23,7 @@ class Potluck
     @dishes << dish
 
     if @dishes_by_category[dish.category]
-      @dishes_by_category[dish.category].push(dish)
+      @dishes_by_category[dish.category] << dish
     else
       @dishes_by_category[dish.category] = dish
     end

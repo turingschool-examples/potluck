@@ -38,10 +38,10 @@ class DishTest < Minitest::Test
     potluck.add_dish(roast_pork)
     # potluck.add_dish(cocktail_meatballs)
     # potluck.add_dish(candy_salad)
-    actual = potluck.get_all_from_category(:appetizer)
-    expected = [couscous_salad, summer_pizza]
+    binding.pry
+    actual = potluck.get_all_from_category(:entre)
+    expected = [roast_pork]
     assert_equal expected, actual
-
     # potluck.get_all_from_category(:appetizer).first
     # potluck.get_all_from_category(:appetizer).first.name
   end
