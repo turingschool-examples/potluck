@@ -1,3 +1,5 @@
+require './lib/dish.rb'
+
 class Potluck
   attr_reader :date, :dishes
 
@@ -11,6 +13,6 @@ class Potluck
   end
 
   def get_all_from_category(category_type)
-    category[category_type]
+    menu_hash[category_type]
   end
 end

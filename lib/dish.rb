@@ -4,6 +4,10 @@ class Dish
 
   def initialize(name, category)
     @name = name
-    @category = {:appetizer => name}
+    @category = {category => name}
+  end
+
+  def menu_hash
+    @category
   end
 end
