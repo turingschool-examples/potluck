@@ -9,9 +9,13 @@ class Dish
     # dishes = {:appetizer, "Couscous Salad"}
   end
 
-  # will need a method that calls the dishes name 
+  # will need a method that calls the dishes name
   def name
     @name
+  end
+
+  def category
+    @category
   end
 
 
