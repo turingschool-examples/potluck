@@ -92,4 +92,17 @@ class PotluckTest < Minitest::Test
     assert_equal "Candy Salad", potluck.get_all_from_category(:dessert).first.name
   end
 
+  def test_it_has_a_menu
+    potluck = Potluck.new("7-13-18")
+    assert_equal {}, potluck.menu
+  end
+
+  def test_it_sorts_dishes
+
+  end
+
+  def test_it_puts_dishes_in_hash_by_category
+
+  end
+
 end
