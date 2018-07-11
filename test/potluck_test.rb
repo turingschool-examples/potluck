@@ -36,4 +36,16 @@ class PotluckTest < Minitest::Test
     assert_instance_of Dish, cocktail_meatballs
   end
 
+#not working, fix this
+  def test_if_couscous_added
+    cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
+    potluck = Potluck.new("7-13-18")
+
+    # assert_instance_of Dish, potluck.add_dish(couscous_salad)
+    assert_instance_of Dish, potluck.add_dish(cocktail_meatballs)
+  end
+
+
+
+
 end
