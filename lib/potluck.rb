@@ -8,7 +8,7 @@ class Potluck
   def initialize(date)
     @date = date
     @dishes = []
-    @menu = {}
+    @menu_hash = {}
   end
 
   def add_dish(dish)
@@ -51,11 +51,17 @@ class Potluck
          food = food.name
       end
 
-      menu_hash = {appetizers: apps, entres: entres, desserts: desserts}
+      @menu_hash = {appetizers: apps, entres: entres, desserts: desserts}
   end
 
   def ratio(food_type)
-    
+    #count up the number of key of the food food_type
+
+    #count up total number in Hash
+    total_foods =
+
+    #divide one by the other
+    total_food_type / total_foods
   end
 
 end
