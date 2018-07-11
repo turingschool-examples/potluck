@@ -5,7 +5,7 @@ class Potluck
   def initialize(date)
     @date = date
     @dishes = []
-    @menu_items = Hash.new(0)
+    @menu_items = Hash.new([0])
   end
 
   def add_dish(dish)
@@ -20,11 +20,13 @@ class Potluck
     end
   end
 
-  # def menu
-  #   @dishes.find_all do |dish|
-  #     @menu_items[dish.category] = dish.name
-  #   end
-  # end
+  def menu
+    menu_items = Hash.new(0)
+    @dishes.sort_by do |dish|
+      menu_items[dish.category] = dish.name
+      require "pry"; binding.pry
+    end
+  end
 
   def ratio(category)
     dish_category = get_all_from_category(category)
