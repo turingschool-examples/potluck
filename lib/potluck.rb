@@ -33,4 +33,13 @@ class Potluck
     end
     @menu
   end
+
+  def ratio(category)
+    category_split = @dishes.group_by(&:category)
+
+    category_count = category_split[category].count
+    total_count = @dishes.count
+
+    (category_count.to_f / total_count.to_f) * 100
+  end
 end
