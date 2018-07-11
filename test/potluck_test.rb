@@ -69,8 +69,8 @@ class PotluckTest < Minitest::Test
     potluck.add_dish(cocktail_meatballs)
     potluck.add_dish(candy_salad)
 
-    asert_equal [couscous_salad], potluck.get_all_from_category(:appetizer).first
-    asert_equal [roast_pork], potluck.get_all_from_category(:entre).first
-    assert_equal [candy_salad], potluck.get_all_from_category(:dessert).first
+    assert_equal couscous_salad, potluck.get_all_from_category(:appetizer).first
+    assert_equal roast_pork, potluck.get_all_from_category(:entre).first
+    assert_equal candy_salad, potluck.get_all_from_category(:dessert).first
   end
 end
