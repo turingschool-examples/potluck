@@ -12,7 +12,7 @@ class Potluck
   end
 
   def get_all_from_category(category)
-    @dishes.map do |dish|
+    @dishes.find_all do |dish|
       if dish.category == category
         dish
       end
