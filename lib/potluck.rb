@@ -21,5 +21,23 @@ class Potluck
     end 
   end 
         
+  def menu_populate
+    menu = {}
+    @dishes.each do |dish|
+      menu << [dish.category]
+    end 
+    return menu 
+  end 
   
+  def menu
+    menu_populate.map! do |category_key|
+      [category_key] = @dishes.find_all do |dish|
+        dish.category == category_key
+      end 
+    end 
+  end   
+  
+  def ratio(category)
+    menu[category].count.to_f / menu.count.to_f
+  end 
 end 
