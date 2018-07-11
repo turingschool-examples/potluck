@@ -12,7 +12,7 @@ class Potluck
   end
 
   def get_all_from_category(food_type)
-    all = @dishes.all do |food|
+    all = @dishes.find_all do |food|
       food.category == food_type
     end
     return all
