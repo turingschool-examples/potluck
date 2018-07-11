@@ -115,8 +115,4 @@ class PotluckTest < Minitest::Test
     assert_equal menu, potluck.menu
   end
 
-  def test_it_puts_dishes_in_hash_by_category
-
-  end
-
 end

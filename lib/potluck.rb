@@ -54,11 +54,8 @@ class Potluck
       menu_hash = {appetizers: apps, entres: entres, desserts: desserts}
   end
 
-  def sort_dishes
-
-
-
-
+  def ratio(food_type)
+    
   end
 
 end
