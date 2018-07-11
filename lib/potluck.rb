@@ -42,15 +42,15 @@ class Potluck
     end
 
     def ratio(category)
-      hash_to_return = {}
+      hash_to_math_on = {}
       @dishes.each do |dish|
-      if hash_to_return.include?(dish.category) == false
-        hash_to_return[dish.category] = 0
+      if hash_to_math_on.include?(dish.category) == false
+        hash_to_math_on[dish.category] = 0
       end
-        hash_to_return[dish.category] += 1
+        hash_to_math_on[dish.category] += 1
       end
-      sum = hash_to_return.values.sum
-      ratio = (hash_to_return[category] / sum.to_f) * 100
+      sum = hash_to_math_on.values.sum
+      ratio = (hash_to_math_on[category] / sum.to_f) * 100
       end
 
 
