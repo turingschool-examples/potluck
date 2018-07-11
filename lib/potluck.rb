@@ -34,7 +34,7 @@ class Potluck
       hash_to_return[dish.category] << dish.name
     end
     new_hash = {}
-    arrrr = hash_to_return.map do |key, value|
+    hash_to_return.map do |key, value|
       new_key = (key.to_s + 's').to_sym
       new_hash[new_key] = value.sort
     end
