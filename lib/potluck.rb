@@ -20,8 +20,10 @@ class Potluck
 
   def add_dish(dish)
     @dishes << dish
-
-    if @dishes_by_category[dish.category]
+    add_to_hash(dish)
+  end
+  def add_to_hash(dish)
+    if @dishes_by_category.has_key?[dish.category]
       @dishes_by_category[dish.category] << dish
     else
       @dishes_by_category[dish.category] = dish
