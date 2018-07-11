@@ -3,10 +3,15 @@ class Potluck
 
   def initialize(date)
     @date = date
-    @dishes = []
+    @dishes = {}
   end
 
  def add_dish(new_dish)
-   @dishes << new_dish
+   @dishes[new_dish.category] = new_dish.name
  end
+
+ def get_all_from_category(category)
+   @dishes[category]
+ end
+
 end
