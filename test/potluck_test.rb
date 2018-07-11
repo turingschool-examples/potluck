@@ -100,7 +100,7 @@ class PotluckTest < Minitest::Test
     potluck = Potluck.new("7-13-18")
     couscous_salad = Dish.new("Couscous Salad", :appetizer)
     summer_pizza = Dish.new("Summer Pizza", :appetizer)
-    roast_pork = Dish.new("Roast Pork", :entre)
+    roast_pork = Dish.new("Roast Pork", :entres)
     cocktail_meatballs = Dish.new("Cocktail Meatballs", :entres)
     candy_salad = Dish.new("Candy Salad", :desserts)
     bean_dip = Dish.new("Bean Dip", :appetizer)
@@ -110,7 +110,7 @@ class PotluckTest < Minitest::Test
     potluck.add_dish(cocktail_meatballs)
     potluck.add_dish(candy_salad)
     potluck.add_dish(bean_dip)
-
+    potluck.menu
     assert_equal 50.0, potluck.ratio(:appetizer)
   end
 end

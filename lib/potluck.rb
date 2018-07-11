@@ -7,6 +7,11 @@ class Potluck
   def initialize(date)
     @date = date
     @dishes = []
+    @menu_hash = {
+      :appetizer => [],
+      :entres => [],
+      :desserts => []
+    }
   end
 
   def add_dish(dish)
@@ -20,10 +25,15 @@ class Potluck
   end
 
   def menu
-    menu_hash = {:appetizer => [], :entres => [], :desserts => []}
     @dishes.each do |dish|
-      menu_hash[dish.category] << dish.name
+      @menu_hash[dish.category] << dish.name
     end
-    menu_hash
+    @menu_hash
+  end
+
+  def ratio(category)
+    total_dishes = @dishes.length.to_f
+    category_dishes = @menu_hash[category].length
+    category_dishes/total_dishes * 100
   end
 end
