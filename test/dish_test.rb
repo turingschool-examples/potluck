@@ -19,6 +19,12 @@ class DishTest < Minitest::Test
   def test_category
     dish = Dish.new("Couscous", :appetizer)
 
-    assert_equal :appetizer, dish.category
+    assert_equal :appetizer, dish.category.keys[0]
+  end
+
+  def test_dish_can_be_added
+    dish = Dish.new("Couscous", :appetizer)
   end 
+
+
 end
