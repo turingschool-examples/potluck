@@ -36,9 +36,8 @@ class Potluck
 end
 
   def ratio(category)
-    menu_array = menu
-    total_items = menu_array.values.flatten.count
-    category_items = menu_array[category].count
+    total_items = menu.values.flatten.count
+    category_items = menu[category].count
     category_items.to_f / total_items
   end
 end
