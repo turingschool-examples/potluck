@@ -6,9 +6,12 @@ class Potluck
   attr_reader :date,
               :dishes
 
+
   def initialize (date)
      @date = date
      @dishes = []
+     #when added it makes my tests fail.  
+     # @get_all_from_category = Dish.new(category(0))
 
   end
 
@@ -16,10 +19,5 @@ class Potluck
   def add_dish(dish)
     dishes << dish_name
   end
-
-  def get_all_from_category
-    #will somehow interact with the category from dish class
-  end
-
 
 end
