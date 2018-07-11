@@ -53,6 +53,17 @@ class PotluckTest < Minitest::Test
      assert_equal [couscous_salad,summer_pizza], potluck.get_all_from_category(:appetizer)
      assert_equal couscous_salad, potluck.get_all_from_category(:appetizer).first
      assert_equal "Couscous Salad", potluck.get_all_from_category(:appetizer).first.name
+
+     bean_dip = Dish.new("Bean Dip", :appetizer)
+     potluck.add_dish(bean_dip)
+
+     expected = {:appetizers=>["Bean Dip", "Couscous Salad", "Summer Pizza"],:entres=>["Cocktail Meatballs", "Roast Pork"],:desserts=>["Candy Salad"]}
+
+     # assert_equal expected, potluck.menu
+
+     pasta_salad = Dish.new("Pasta Salad", :appetizer)
+     potluck.add_dish(pasta_salad)
+     assert_equal 57.14, potluck.ratio(:appetizer)
   end
 
 end
