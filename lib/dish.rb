@@ -6,7 +6,7 @@ class Dish
     @name = name
     @category = category
     # will probably need a hash
-    # dishes = {:appetizer, "Couscous Salad"}
+    # @dishes = {name => category}
 
   end
 
