@@ -16,6 +16,17 @@ class Potluck
     end
   end
 
+  def menu
+    menu = Hash.new { |h, k| h[k] = [] }
+    @dishes.each do |dish|
+      menu[dish.category] << dish.name
+    end
+    menu
+
+  end
+
+
+
 
 
 
