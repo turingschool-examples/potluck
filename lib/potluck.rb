@@ -5,6 +5,7 @@ class Potluck
   def initialize(date)
     @date = date
     @dishes = []
+    @menu_items = Hash.new(0)
   end
 
   def add_dish(dish)
@@ -17,5 +18,16 @@ class Potluck
         dish
       end
     end
+  end
+
+  # def menu
+  #   @dishes.find_all do |dish|
+  #     @menu_items[dish.category] = dish.name
+  #   end
+  # end
+
+  def ratio(category)
+    dish_category = get_all_from_category(category)
+    (dish_category.count.to_f / @dishes.count.to_f).round(4) * 100
   end
 end
