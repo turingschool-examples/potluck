@@ -16,7 +16,6 @@ class Potluck
     @category = category
     @dishes = []
     @dishes_by_category = Hash.new([])
-    #no default value needed by above
   end
 
   def add_dish(dish)

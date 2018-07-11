@@ -1,6 +1,5 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-#require './lib/dish.rb'
 require './lib/potluck'
 require 'pry'
 
@@ -31,14 +30,9 @@ class DishTest < Minitest::Test
     couscous_salad = Dish.new("Couscous Salad", :appetizer)
     summer_pizza = Dish.new("Summer Pizza", :appetizer)
     roast_pork = Dish.new("Roast Pork", :entre)
-    # cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
-    # candy_salad = Dish.new("Candy Salad", :dessert)
     potluck.add_dish(couscous_salad)
     potluck.add_dish(summer_pizza)
     potluck.add_dish(roast_pork)
-    # potluck.add_dish(cocktail_meatballs)
-    # potluck.add_dish(candy_salad)
-    binding.pry
     actual = potluck.get_all_from_category(:entre)
     expected = [roast_pork]
     assert_equal expected, actual
