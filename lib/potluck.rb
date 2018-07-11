@@ -10,6 +10,11 @@ class Potluck
   def initialize(date)
     @date = date
     @dishes = []
+    @menu = {
+      appetizer: [],
+      entree: [],
+      dessert: []
+    }
   end
 
   def add_dish(dish)
@@ -20,5 +25,12 @@ class Potluck
     @dishes.find_all do |dish|
       dish.category == category
     end
+  end
+
+  def menu
+    @dishes.each do |dish|
+      @menu[dish.category] << dish.name
+    end
+    @menu
   end
 end
