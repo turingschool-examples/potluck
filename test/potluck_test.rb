@@ -30,6 +30,13 @@ class PotluckTest < Minitest::Test
     cocktail_meatballs = Dish.new("Cocktail Meatballs", :entree)
     assert_instance_of Dish, cocktail_meatballs
   end
+
+  def test_adding_couscous_dish_to_the_potluck
+    potluck = Potluck.new("7-13-18")
+    couscous_salad = Dish.new("Couscous Salad", :appetizer)
+    assert_equal couscous_salad, potluck.add_dish(couscous_salad)
+  end
+
   # def test_adding_dishes_to_the_potluck
   #   potluck = Potluck.new("7-13-18")
   #   couscous_salad = Dish.new("Couscous Salad", :appetizer)
