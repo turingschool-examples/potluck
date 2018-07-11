@@ -42,4 +42,37 @@ class PotluckTest < Minitest::Test
 
     assert_equal expected, actual
   end
+
+  def test_it_can_count_dishes
+    potluck = Potluck.new('7-13-18')
+    couscous_salad = Dish.new('Couscous Salad', :appetizer)
+    cocktail_meatballs = Dish.new('Cocktail Meatballs', :entree)
+    potluck.add_dish(couscous_salad)
+    potluck.add_dish(cocktail_meatballs)
+
+    expected = 2
+    actual = potluck.dishes.length
+
+    assert_equal expected, actual
+  end
+
+  def test_it_can_return_categories_of_dishes
+    potluck = Potluck.new('7-13-18')
+    couscous_salad = Dish.new('Couscous Salad', :appetizer)
+    summer_pizza = Dish.new('Summer Pizza', :appetizer)
+    roast_pork = Dish.new('Roast Pork', :entree)
+    cocktail_meatballs = Dish.new('Cocktail Meatballs', :entree)
+    candy_salad = Dish.new('Candy Salad', :dessert)
+
+    potluck.add_dish(couscous_salad)
+    potluck.add_dish(summer_pizza)
+    potluck.add_dish(roast_pork)
+    potluck.add_dish(cocktail_meatballs)
+    potluck.add_dish(candy_salad)
+
+    expected = [couscous_salad, summer_pizza]
+    actual = potluck.get_all_from_category(:appetizer)
+
+    assert_equal expected, actual
+  end
 end
