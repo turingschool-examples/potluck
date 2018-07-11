@@ -1,6 +1,6 @@
 class Dish
 
-attr_reader :name, :category
+  attr_reader :name, :category
 
   def initialize(name, category)
     @name = name
@@ -10,7 +10,5 @@ attr_reader :name, :category
   def dishes
     dishes = {appetizer: "Couscous Salad", entre: "Cocktail Meatballs"}
   end
-
-  
 
 end
