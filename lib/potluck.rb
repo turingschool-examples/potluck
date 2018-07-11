@@ -20,10 +20,7 @@ class Potluck
   end
 
   def menu
-    menu_hash = Hash.new
-    @dishes.each do |dish|
-      menu_hash[dish.category] = []
-    end
+    menu_hash = {:appetizer => [], :entres => [], :desserts => []}
     @dishes.each do |dish|
       menu_hash[dish.category] << dish.name
     end
