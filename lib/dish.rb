@@ -7,7 +7,4 @@ class Dish
     @category = {category => name}
   end
 
-  def menu_hash
-    @category
-  end
 end

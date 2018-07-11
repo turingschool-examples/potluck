@@ -2,6 +2,7 @@ require './lib/potluck.rb'
 require './lib/dish.rb'
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'pry'
 
 class PotluckTest < MiniTest::Test
   def test_it_exists
@@ -51,7 +52,7 @@ class PotluckTest < MiniTest::Test
     potluck.add_dish(couscous_salad)
     potluck.add_dish(cocktail_meatballs)
     potluck.add_dish(summer_pizza)
-
+    
     expected = [couscous_salad, summer_pizza]
     actual = potluck.get_all_from_category(:appetizer)
 
