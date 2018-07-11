@@ -5,11 +5,6 @@ require './lib/potluck'
 
 class PotluckTest < Minitest::Test
 
-  # def setup
-  #   dish = Dish.new("Couscous Salad", :appetizer)
-  #   potluck = Potluck.new("7-13-18")
-  # end
-
   def test_Dish_exists
     dish = Dish.new("Couscous Salad", :appetizer)
     assert_instance_of Dish, dish
@@ -33,5 +28,27 @@ class PotluckTest < Minitest::Test
   def test_Potluck_has_a_date
     potluck = Potluck.new("7-13-18")
     assert_equal "7-13-18", potluck.date
+  end
+
+  def test_Potlock_has_dishes
+    potluck = Potluck.new("7-13-18")
+    assert_equal [], potluck.dishes
+  end
+
+  def test_it_can_add_dishes
+    potluck = Potluck.new("7-13-18")
+    couscous_salad = Dish.new("Couscous Salad", :appetizer)
+    cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
+    potluck.add_dish(couscous_salad)
+    potluck.add_dish(cocktail_meatballs)
+    assert_equal [couscous_salad, cocktail_meatballs], potluck.dishes
+  end
+
+  def test_dishes_can_return_correct_length
+    potluck = Potluck.new("7-13-18")
+    couscous_salad = Dish.new("Couscous Salad", :appetizer)
+    cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
+    potluck.add_dish(couscous_salad)
+    potluck.add_dish(cocktail_meatballs)
   end
 end
