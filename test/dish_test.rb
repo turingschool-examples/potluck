@@ -18,5 +18,6 @@ class DishTest < Minitest::Test
   def test_it_has_a_category
     dish = Dish.new("Couscous Salad", :appetizer)
     assert_equal :appetizer, dish.category
-  end 
+  end
+
 end

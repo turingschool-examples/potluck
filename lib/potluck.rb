@@ -4,6 +4,7 @@ require "./lib/dish"
 class Potluck
   def initialize(date)
     @date = date
+    @dishes = {@name => @category}
   end
 
   def date
@@ -12,6 +13,10 @@ class Potluck
 
   def dishes
     @dishes = []
-  end 
+  end
+
+  def add_dish(name)
+
+  end
 
 end
