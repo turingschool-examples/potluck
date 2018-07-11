@@ -3,6 +3,10 @@ require "./lib/dish"
 
 class Potluck
   def initialize(date)
+    @date = date
+  end
 
-  end 
+  def date
+    @date
+  end
 end
