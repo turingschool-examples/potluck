@@ -22,16 +22,19 @@ class PotluckTest < Minitest::Test
 
   def test_Potluck_exists
     potluck = Potluck.new("7-13-18")
+    
     assert_instance_of Potluck, potluck
   end
 
   def test_Potluck_has_a_date
     potluck = Potluck.new("7-13-18")
+
     assert_equal "7-13-18", potluck.date
   end
 
   def test_Potlock_has_dishes
     potluck = Potluck.new("7-13-18")
+
     assert_equal [], potluck.dishes
   end
 
@@ -41,6 +44,7 @@ class PotluckTest < Minitest::Test
     cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
     potluck.add_dish(couscous_salad)
     potluck.add_dish(cocktail_meatballs)
+
     assert_equal [couscous_salad, cocktail_meatballs], potluck.dishes
   end
 
@@ -50,6 +54,7 @@ class PotluckTest < Minitest::Test
     cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
     potluck.add_dish(couscous_salad)
     potluck.add_dish(cocktail_meatballs)
+
     assert_equal 2, potluck.dishes.length
   end
 
@@ -65,6 +70,7 @@ class PotluckTest < Minitest::Test
     potluck.add_dish(roast_pork)
     potluck.add_dish(cocktail_meatballs)
     potluck.add_dish(candy_salad)
+
     assert_equal [couscous_salad, summer_pizza], potluck.get_all_from_category(:appetizer)
   end
 
@@ -74,7 +80,7 @@ class PotluckTest < Minitest::Test
     summer_pizza = Dish.new("Summer Pizza", :appetizer)
     roast_pork = Dish.new("Roast Pork", :entre)
     cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
-    candy_salad = Dish.new("Candy Salad", :dessert)
+    candy_salad = Dish.new("Candy Salad", :desserts)
     bean_dip = Dish.new("Bean Dip", :appetizer)
     potluck.add_dish(couscous_salad)
     potluck.add_dish(summer_pizza)
@@ -87,9 +93,6 @@ class PotluckTest < Minitest::Test
       entres: ["Cocktail Meatballs", "Roast Pork"],
       desserts: ["Candy Salad"]
     }
-
     assert_equal expected, potluck.menu
-
-
   end
 end
