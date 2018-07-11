@@ -1,10 +1,11 @@
 class Potluck
 
-  attr_reader :date, :dishes
+  attr_reader :date, :dishes, :menu
 
   def initialize(date)
     @date = date
     @dishes = []
+    @menu = {}
   end
 
   def add_dish(dish)
@@ -17,4 +18,10 @@ class Potluck
     end
     return all
   end
+
+  def menu
+    
+
+  end
+
 end
