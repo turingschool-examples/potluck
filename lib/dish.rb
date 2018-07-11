@@ -11,13 +11,9 @@ class Dish
   end
 
   # will need a method that calls the dishes name
-  def name
-    @name
-  end
 
-  def category
-    @category
-  end
+
+
 
 
 end

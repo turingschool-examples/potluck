@@ -7,6 +7,7 @@ class Potluck
     # @dishes = {name => category}
   end
 
+
   def date
     @date
   end
