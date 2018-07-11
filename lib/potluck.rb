@@ -1,6 +1,9 @@
+require "pry"
+
 class Potluck
 
-  attr_reader :date, :dishes, :menu
+  attr_reader :date, :dishes
+  attr_accessor :menu
 
   def initialize(date)
     @date = date
@@ -20,7 +23,41 @@ class Potluck
   end
 
   def menu
-    
+      apps = get_all_from_category(:appetizer)
+      entres = get_all_from_category(:entre)
+      desserts = get_all_from_category(:dessert)
+
+      apps = apps.sort_by do |food|
+         food = food.name[0]
+      end
+
+      apps = apps.map! do |food|
+         food = food.name
+      end
+
+      entres = entres.sort_by do |food|
+         food = food.name[0]
+      end
+
+      entres = entres.map! do |food|
+         food = food.name
+      end
+
+      desserts = desserts.sort_by do |food|
+         food = food.name[0]
+      end
+
+      desserts = desserts.map! do |food|
+         food = food.name
+      end
+
+      menu_hash = {appetizers: apps, entres: entres, desserts: desserts}
+  end
+
+  def sort_dishes
+
+
+
 
   end
 

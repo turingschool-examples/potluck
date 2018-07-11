@@ -92,10 +92,10 @@ class PotluckTest < Minitest::Test
     assert_equal "Candy Salad", potluck.get_all_from_category(:dessert).first.name
   end
 
-  def test_it_has_a_menu
-    potluck = Potluck.new("7-13-18")
-    assert_equal {}, potluck.menu
-  end
+  # def test_it_has_a_menu
+  #   potluck = Potluck.new("7-13-18")
+  #   assert_equal [], potluck.menu.keys
+  # end
 
   def test_it_sorts_dishes
     potluck = Potluck.new("7-13-18")
@@ -111,9 +111,8 @@ class PotluckTest < Minitest::Test
     potluck.add_dish(cocktail_meatballs)
     potluck.add_dish(candy_salad)
     potluck.add_dish(bean_dip)
-    assert_equal ["Bean Dip", "Couscous Salad", "Summer Pizza"], potluck.get_all_from_category(:appetizer).sort
-    assert_equal ["Cocktail Meatballs", "Roast Pork"], potluck.get_all_from_category(:entre).sort
-    assert_equal ["Candy Salad"], potluck.get_all_from_category(:dessert).sort
+    menu = {:appetizers=>["Bean Dip", "Couscous Salad", "Summer Pizza"],:entres=>["Cocktail Meatballs", "Roast Pork"],:desserts=>["Candy Salad"]}
+    assert_equal menu, potluck.menu
   end
 
   def test_it_puts_dishes_in_hash_by_category
