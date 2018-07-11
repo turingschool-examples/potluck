@@ -20,7 +20,6 @@ class PotluckTest < Minitest::Test
   end
 
   def test_it_adds_dishes
-    skip
     potluck = Potluck.new("7-13-18")
     couscous_salad = Dish.new("Couscous Salad", :appetizer)
     cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
@@ -31,7 +30,6 @@ class PotluckTest < Minitest::Test
   end
 
   def test_it_has_correct_number_dishes
-    skip
     potluck = Potluck.new("7-13-18")
     couscous_salad = Dish.new("Couscous Salad", :appetizer)
     cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
