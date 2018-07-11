@@ -75,4 +75,29 @@ class PotluckTest < Minitest::Test
 
     assert_equal expected, actual
   end
+
+  def test_it_can_return_specific_information_about_dishes
+    potluck = Potluck.new('7-13-18')
+    couscous_salad = Dish.new('Couscous Salad', :appetizer)
+    summer_pizza = Dish.new('Summer Pizza', :appetizer)
+    roast_pork = Dish.new('Roast Pork', :entree)
+    cocktail_meatballs = Dish.new('Cocktail Meatballs', :entree)
+    candy_salad = Dish.new('Candy Salad', :dessert)
+
+    potluck.add_dish(couscous_salad)
+    potluck.add_dish(summer_pizza)
+    potluck.add_dish(roast_pork)
+    potluck.add_dish(cocktail_meatballs)
+    potluck.add_dish(candy_salad)
+
+    expected1 = couscous_salad
+    actual1 = potluck.get_all_from_category(:appetizer).first
+
+    assert_equal expected1, actual1
+
+    expected2 = 'Couscous Salad'
+    actual2 = potluck.get_all_from_category(:appetizer).first.name
+
+    assert_equal expected2, actual2
+  end
 end
