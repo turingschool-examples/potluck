@@ -13,4 +13,10 @@ class PotluckTest < Minitest::Test
     potluck = Potluck.new("7-13-18")
     assert_equal "7-13-18", potluck.date
   end
+
+  def test_it_has_no_dishes
+    potluck = Potluck.new("7-13-18")
+    assert_equal [], potluck.dishes
+  end
+
 end

@@ -9,4 +9,9 @@ class Potluck
   def date
     @date
   end
+
+  def dishes
+    @dishes = []
+  end 
+
 end
