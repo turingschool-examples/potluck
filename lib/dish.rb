@@ -7,8 +7,10 @@ attr_reader :name, :category
     @category = category
   end
 
-end
+  def dishes
+    dishes = {appetizer: "Couscous Salad", entre: "Cocktail Meatballs"}
+  end
 
-class Potluck
+  
 
 end
