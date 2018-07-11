@@ -22,9 +22,21 @@ class Potluck
   end
 
   def menu
-    @dishes.sort_by do |dish|
-      dish.name
+    hash = Hash.new{0}
+    x = @dishes.map do |dish|
+      dish.category
     end
+
+    x.map do |category|
+      category_dishes = @dishes.map do |dish|
+        if dish.category == category
+          dish.name
+        end
+      end
+      category_dishes.compact
+      hash[category] = (category_dishes.compact).sort
+    end
+    hash
   end
 
   def ratio(category)

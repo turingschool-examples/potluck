@@ -69,7 +69,7 @@ class PotluckTest < Minitest::Test
     potluck.add_dish(cocktail_meatballs)
     potluck.add_dish(summer_pizza)
 
-    expected = [cocktail_meatballs,couscous_salad,roast_pork,summer_pizza]
+    expected = {:appetizer => ["Couscous Salad","Summer Pizza"], :entre => ["Cocktail Meatballs","Roast Pork"]}
     actual = potluck.menu
 
     assert_equal expected, actual
