@@ -18,4 +18,15 @@ class Potluck
       dish.category == category
     end
   end
+
+  def menu
+    menu_hash = Hash.new
+    @dishes.each do |dish|
+      menu_hash[dish.category] = []
+    end
+    @dishes.each do |dish|
+      menu_hash[dish.category] << dish.name
+    end
+    menu_hash
+  end
 end
