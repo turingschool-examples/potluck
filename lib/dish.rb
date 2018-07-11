@@ -6,5 +6,4 @@ class Dish
     @name = name
     @category = {category => name}
   end
-
 end

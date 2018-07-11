@@ -49,10 +49,11 @@ class PotluckTest < MiniTest::Test
     couscous_salad = Dish.new("Couscous Salad", :appetizer)
     cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
     summer_pizza = Dish.new("Summer Pizza", :appetizer)
+
     potluck.add_dish(couscous_salad)
     potluck.add_dish(cocktail_meatballs)
     potluck.add_dish(summer_pizza)
-    
+
     expected = [couscous_salad, summer_pizza]
     actual = potluck.get_all_from_category(:appetizer)
 
