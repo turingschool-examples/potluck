@@ -10,4 +10,11 @@ class Potluck
   def add_dish(dish)
     @dishes << dish
   end
+
+  def get_all_from_category(food_type)
+    all = @dishes.all do |food|
+      food.category == food_type
+    end
+    return all
+  end
 end
