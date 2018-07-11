@@ -6,24 +6,20 @@ require './lib/potluck'
 class DishTest < Minitest::Test
 
   def test_it_exists
-    skip
     potluck = Potluck.new("7-13-18")
   end
 
   def test_it_holds_a_date
-    skip
     potluck = Potluck.new("7-13-18")
     assert_equal "7-13-18", potluck.date
   end
 
   def test_it_starts_without_dishes
-    skip
     potluck = Potluck.new("7-13-18")
     assert_equal [], potluck.dishes
   end
 
   def test_it_adds_dishes
-    skip
     potluck = Potluck.new("7-13-18")
     couscous_salad = Dish.new("Couscous Salad", :appetizer)
     potluck.add_dish(couscous_salad)
@@ -31,7 +27,6 @@ class DishTest < Minitest::Test
   end
 
   def test_it_holds_many_dishes
-    skip
     potluck = Potluck.new("7-13-18")
     couscous_salad = Dish.new("Couscous Salad", :appetizer)
     cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
@@ -41,15 +36,15 @@ class DishTest < Minitest::Test
   end
 
   def test_it_counts_dishes
-    skip
     potluck = Potluck.new("7-13-18")
     couscous_salad = Dish.new("Couscous Salad", :appetizer)
+    cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
     potluck.add_dish(couscous_salad)
+    potluck.add_dish(cocktail_meatballs)
     assert_equal 2, potluck.dishes.length
   end
 
   def test_it_can_be_accessed_by_category
-    skip
     potluck = Potluck.new("7-13-18")
     couscous_salad = Dish.new("Couscous Salad", :appetizer)
     summer_pizza = Dish.new("Summer Pizza", :appetizer)
@@ -66,7 +61,6 @@ class DishTest < Minitest::Test
   end
 
   def test_it_holds_a_menu
-    skip
     potluck = Potluck.new("7-13-18")
     couscous_salad = Dish.new("Couscous Salad", :appetizer)
     summer_pizza = Dish.new("Summer Pizza", :appetizer)
@@ -85,7 +79,6 @@ class DishTest < Minitest::Test
   end
 
   def test_it_can_calculate_ratio
-    skip
     potluck = Potluck.new("7-13-18")
     couscous_salad = Dish.new("Couscous Salad", :appetizer)
     summer_pizza = Dish.new("Summer Pizza", :appetizer)
@@ -98,6 +91,7 @@ class DishTest < Minitest::Test
     potluck.add_dish(roast_pork)
     potluck.add_dish(cocktail_meatballs)
     potluck.add_dish(candy_salad)
+    potluck.add_dish(bean_dip)
     assert_equal 50.0, potluck.ratio(:appetizer)
 
   end
