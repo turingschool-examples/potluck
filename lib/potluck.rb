@@ -13,6 +13,12 @@ class Potluck
   def get_all_from_category(category)
     @dishes.find_all do |dish|
       dish.category == category
-    end 
+    end
+  end
+
+  def menu
+    @dishes.group_by do |dish|
+      dish.sort
+    end
   end
 end
