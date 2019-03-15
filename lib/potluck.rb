@@ -17,8 +17,8 @@ class Potluck
   end
 
   def menu
-    @dishes.group_by do |dish|
-      dish.sort
+    # require 'pry'; binding.pry
+    @dishes.each.sort_by do |category, name|
     end
   end
 end

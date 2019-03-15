@@ -73,8 +73,5 @@ class PotluckTest < Minitest::Test
     assert_equal expected, potluck.menu
   end
 end
-
-# **Note** for the the `menu` method, dishes are sorted alphabetically.
-
 # potluck.ratio(:appetizer)
 # #=> 50.0
