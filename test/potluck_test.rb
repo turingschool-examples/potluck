@@ -18,7 +18,7 @@ class PotluckTest < Minitest::Test
   end
 
   def test_it_starts_with_no_dishes
-    assert_equal 0, @potluck.dishes
+    assert_equal 0, @potluck.dishes.length
   end
 
   def test_it_can_hold_one_dish
