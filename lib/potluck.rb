@@ -2,14 +2,17 @@ require './lib/dish'
 
 class Potluck
   attr_reader :date,
-              :dishes
+              :dishes,
+              :menu
 
   def initialize(date)
     @date = date
     @dishes = []
+    @menu = {}
   end
 
   def add_dish(dish)
+    menu_adder(dish)
     @dishes << dish
   end
 
@@ -17,5 +20,9 @@ class Potluck
     @dishes.select do |dish|
       dish.category == category
     end
+  end
+
+  def menu_adder(dish)
+    @menu[dish.category] = dish.name #need to make alphabetical though
   end
 end
