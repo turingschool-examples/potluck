@@ -6,11 +6,11 @@ class DishTest < Minitest::Test
     @dish = Dish.new("Couscous Salad", :appetizer)
   end
 
-  def test_that_it_exists
+  def test_it_exists
     assert_instance_of Dish, @dish
   end
 
-  def test_that_is_has_a_name
+  def test_it_has_a_name
      assert_equal "Couscous Salad", @dish.name
   end
 
