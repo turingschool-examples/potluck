@@ -1,3 +1,5 @@
+require './lib/dish'
+
 class Potluck
   attr_reader :date,
               :dishes
@@ -5,5 +7,9 @@ class Potluck
   def initialize(date)
     @date = date
     @dishes = []
+  end
+
+  def add_dish(dish)
+    @dishes << dish
   end
 end
