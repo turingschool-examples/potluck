@@ -67,7 +67,7 @@ describe Potluck do
 
     expect(@potluck.ratio(:appetizer)).to eq(50.0)
     expect(@potluck.ratio(:entre)).to eq(33.3)
-    expect(@potluck.ratio(:desserts)).to eq(16.7)
+    expect(@potluck.ratio(:dessert)).to eq(16.7)
     end
 
 end
