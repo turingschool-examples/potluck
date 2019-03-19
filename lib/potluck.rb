@@ -8,12 +8,13 @@ class Potluck
   def initialize(date)
     @date = date
     @dishes = []
-    @menu = {}
+    @menu = Hash.new([])
   end
 
   def add_dish(dish)
-    menu_adder(dish)
     @dishes << dish
+    menu_generator
+    @dishes
   end
 
   def get_all_from_category(category)
@@ -22,7 +23,21 @@ class Potluck
     end
   end
 
-  def menu_adder(dish)
-    @menu[dish.category] = dish.name #need to make alphabetical though
+  def menu_generator
+    @menu = Hash.new([])
+
+    @dishes.each do |dish|
+
+      if !@menu.has_key?(dish.category) # add s
+        @menu[dish.category] = [] # add s
+      end
+
+      @menu[dish.category] << dish.name # add s
+    end
+
+    @menu.each_key do |category|
+      @menu[category].sort!
+    end
+
   end
 end
