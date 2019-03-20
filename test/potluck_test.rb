@@ -2,11 +2,15 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require '../lib/potluck'
 require '../lib/dish'
+
 class PotluckTest < Minitest::Test
   def setup
     @potluck = Potluck.new("7-13-19")
     @couscous_salad = Dish.new("Couscous Salad", :appetizer)
     @cocktail_meatballs = Dish.new("Cocktail Meatballs", :entree)
+    @summer_pizza = Dish.new("Summer Pizza", :appetizer)
+    @roast_pork = Dish.new("Roast Pork", :entree)
+    @candy_salad = Dish.new("Candy Salad", :dessert)
   end
 
   def test_it_exists
@@ -36,4 +40,36 @@ class PotluckTest < Minitest::Test
     assert_equal 2, @potluck.dishes.length
   end
 
+  def test_it_can_get_all_dishes_from_category
+    @potluck.add_dish(@couscous_salad)
+    @potluck.add_dish(@cocktail_meatballs)
+    @potluck.add_dish(@summer_pizza)
+    @potluck.add_dish(@roast_pork)
+    @potluck.add_dish(@candy_salad)
+
+    assert_equal 2, @potluck.get_all_from_category(:appetizer).length
+    assert_equal [@couscous_salad, @summer_pizza], @potluck.get_all_from_category(:appetizer)
+  end
+
+  def test_it_gets_appetizers_in_order_they_were_added
+    @potluck.add_dish(@couscous_salad)
+    @potluck.add_dish(@cocktail_meatballs)
+    @potluck.add_dish(@summer_pizza)
+    @potluck.add_dish(@roast_pork)
+    @potluck.add_dish(@candy_salad)
+
+    assert_equal "Couscous Salad", @potluck.get_all_from_category(:appetizer).first.name
+    assert_equal "Summer Pizza", @potluck.get_all_from_category(:appetizer).last.name
+  end
+
+  def test_it_gets_entrees_in_order_they_were_added
+    @potluck.add_dish(@couscous_salad)
+    @potluck.add_dish(@cocktail_meatballs)
+    @potluck.add_dish(@summer_pizza)
+    @potluck.add_dish(@roast_pork)
+    @potluck.add_dish(@candy_salad)
+
+    assert_equal "Cocktail Meatballs", @potluck.get_all_from_category(:entree).first.name
+    assert_equal "Roast Pork", @potluck.get_all_from_category(:entree).last.name
+  end
 end
