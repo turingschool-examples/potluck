@@ -73,4 +73,12 @@ class PotluckTest < Minitest::Test
     assert_equal "Cocktail Meatballs", @potluck.get_all_from_category(:entree).first.name
     assert_equal "Roast Pork", @potluck.get_all_from_category(:entree).last.name
   end
+
+  def test_it_can_display_a_menu_of_two_items
+    @potluck.add_dish(@couscous_salad)
+    @potluck.add_dish(@cocktail_meatballs)
+
+    test_menu = {:appetizers => ["Couscous Salad"], :entrees => ["Cocktail Meatballs"]}
+    assert_equal test_menu, @potluck.menu
+  end
 end
