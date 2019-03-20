@@ -48,6 +48,7 @@ class PotluckTest < Minitest::Test
     @potluck.add_dish(@candy_salad)
 
     assert_equal 2, @potluck.get_all_from_category(:appetizer).length
+    assert_equal [@couscous_salad, @summer_pizza], @potluck.get_all_from_category(:appetizer)
   end
 
   def test_it_gets_appetizers_in_order_they_were_added
@@ -58,6 +59,7 @@ class PotluckTest < Minitest::Test
     @potluck.add_dish(@candy_salad)
 
     assert_equal "Couscous Salad", @potluck.get_all_from_category(:appetizer).first.name
+    assert_equal "Summer Pizza", @potluck.get_all_from_category(:appetizer).last.name
   end
 
   def test_it_gets_entrees_in_order_they_were_added
@@ -68,5 +70,6 @@ class PotluckTest < Minitest::Test
     @potluck.add_dish(@candy_salad)
 
     assert_equal "Cocktail Meatballs", @potluck.get_all_from_category(:entree).first.name
+    assert_equal "Roast Pork", @potluck.get_all_from_category(:entree).last.name
   end
 end
