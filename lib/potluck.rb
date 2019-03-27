@@ -15,4 +15,19 @@ class Potluck
       dish.category == category
     end
   end
+
+  def menu
+    menu = {}
+    @dishes.each do |item|
+      menu[(item.category.to_s + "s").to_sym] = []
+    end
+    @dishes.chunk do |item|
+      item.category
+    end.each do |category, item|
+      item.each do |food|
+        menu[(category.to_s + "s").to_sym] << food.name
+      end
+    end
+    menu
+  end
 end
