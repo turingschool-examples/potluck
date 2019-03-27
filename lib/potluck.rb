@@ -30,4 +30,10 @@ class Potluck
     end
     menu
   end
+
+  def ratio(category)
+    menu_length = @dishes.length
+    category_length = menu[category].length
+    (category_length / menu_length.round(1)) * 100
+  end
 end

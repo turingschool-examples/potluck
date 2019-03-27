@@ -102,7 +102,7 @@ class PotluckTest < Minitest::Test
     @potluck.add_dish(@roast_pork)
     @potluck.add_dish(@candy_salad)
 
-    assert_equal 50.0, potluck.ratio(:appetizer)
+    assert_equal 50.0, @potluck.ratio(:appetizers)
   end
 
 end
