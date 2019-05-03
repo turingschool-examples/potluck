@@ -10,4 +10,12 @@ class CardTest < Minitest::Test
   def test_it_exists
     assert_instance_of Dish, @dish
   end
+
+  def test_name
+    assert_equal "Couscous Salad", @dish.name
+  end
+
+  def test_appetizer
+    assert_equal :appetizer, @dish.category
+  end
 end
