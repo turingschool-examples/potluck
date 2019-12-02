@@ -31,11 +31,10 @@ class PotluckTest < MiniTest::Test
   end
 
   def test_it_can_return_dishes_per_category
-    potluck = Potluck.new("7-13-18")
+    potluck = Potluck.new('7-13-18')
     couscous_salad = Dish.new('Couscous Salad', :appetizer)
     summer_pizza = Dish.new('Summer Pizza', :appetizer)
     roast_pork = Dish.new('Roast Pork', :entre)
-    candy_salad = Dish.new('Candy Salad', :dessert)
     potluck.add_dish(couscous_salad)
     assert_equal [couscous_salad], potluck.get_all_from_category(:appetizer)
     potluck.add_dish(summer_pizza)
@@ -43,6 +42,35 @@ class PotluckTest < MiniTest::Test
     assert_equal [], potluck.get_all_from_category(:entre)
     potluck.add_dish(roast_pork)
     assert_equal [roast_pork], potluck.get_all_from_category(:entre)
+  end
+
+  def test_it_can_return_the_menu
+    potluck = Potluck.new('7-13-18')
+    couscous_salad = Dish.new('Couscous Salad', :appetizer)
+    summer_pizza = Dish.new('Summer Pizza', :appetizer)
+    roast_pork = Dish.new('Roast Pork', :entre)
+    candy_salad = Dish.new('Candy Salad', :dessert)
+    potluck.add_dish(couscous_salad)
+    potluck.add_dish(summer_pizza)
+    potluck.add_dish(roast_pork)
+    potluck.add_dish(candy_salad)
+    menu = { appetizer: [couscous_salad, summer_pizza], entre: [roast_pork], dessert: [candy_salad] }
+    assert_equal menu , potluck.menu
+  end
+
+  def test_it_returns_ratio
+    potluck = Potluck.new('7-13-18')
+    couscous_salad = Dish.new('Couscous Salad', :appetizer)
+    summer_pizza = Dish.new('Summer Pizza', :appetizer)
+    roast_pork = Dish.new('Roast Pork', :entre)
+    candy_salad = Dish.new('Candy Salad', :dessert)
+    potluck.add_dish(couscous_salad)
+    potluck.add_dish(summer_pizza)
+    potluck.add_dish(roast_pork)
+    potluck.add_dish(candy_salad)
+    assert_equal 50.0, potluck.ratio(:appetizer)
+    assert_equal 25.0, potluck.ratio(:entre)
+    assert_equal 25.0, potluck.ratio(:dessert)
   end
 
 end

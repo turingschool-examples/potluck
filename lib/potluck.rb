@@ -17,4 +17,16 @@ class Potluck
     dish_per_category
   end
 
+  def menu 
+    menu = {}
+    @dishes.each do |dish|
+      menu[dish.category] = get_all_from_category(dish.category)
+    end
+    menu
+  end
+
+  def ratio(category)
+    @dishes.size.zero? ? 'No dishes yet' : (get_all_from_category(category).size / @dishes.size.to_f)*100.round(1)
+  end
+
 end
