@@ -11,11 +11,11 @@ class Potluck
   end
 
   def length
-    dishes.length
+    @dishes.length
   end
 
   def get_all_from_category(category)
-    dishes.find_all do |dish|
+    @dishes.find_all do |dish|
       dish.category == category
     end
   end
@@ -23,14 +23,14 @@ class Potluck
   def menu
     categories = []
     return_menu = {}
-    dishes.each do |dish|
+    @dishes.each do |dish|
       if !(categories.include?(dish.category))
         categories << dish.category
       end
     end
 
     categories.each do |category|
-      category_items = dishes.find_all{|dish| dish.category == category}
+      category_items = get_all_from_category(category)
       category_items = category_items.sort_by{|item| item.name}
       return_menu[category] = category_items
     end
