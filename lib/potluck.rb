@@ -18,7 +18,27 @@ class Potluck
     dishes.find_all do |dish|
       dish.category == category
     end
+  end
+
+  def menu
+    categories = []
+    return_menu = {}
+    dishes.each do |dish|
+      if !(categories.include?(dish.category))
+        categories << dish.category
+      end
+    end
+
+    categories.each do |category|
+      return_menu[category] = dishes.find_all { |dish| dish.category == category }
+    end
+
+    return return_menu
 
   end
-  
+
+  def ratio
+
+  end
+
 end
