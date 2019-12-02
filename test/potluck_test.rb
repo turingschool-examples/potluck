@@ -22,12 +22,27 @@ class PotluckTest < MiniTest::Test
   
   def test_it_can_add_a_dish
     potluck = Potluck.new('7-13-18')
-    dish1 = Dish.new("Couscous Salad", :appetizer)
-    dish2 = Dish.new("Cocktail Meatballs", :entre)
+    dish1 = Dish.new('Couscous Salad', :appetizer)
+    dish2 = Dish.new('Cocktail Meatballs', :entre)
     potluck.add_dish(dish1)
     assert_equal [dish1], potluck.dishes
     potluck.add_dish(dish2)
     assert_equal [dish1, dish2], potluck.dishes
+  end
+
+  def test_it_can_return_dishes_per_category
+    potluck = Potluck.new("7-13-18")
+    couscous_salad = Dish.new('Couscous Salad', :appetizer)
+    summer_pizza = Dish.new('Summer Pizza', :appetizer)
+    roast_pork = Dish.new('Roast Pork', :entre)
+    candy_salad = Dish.new('Candy Salad', :dessert)
+    potluck.add_dish(couscous_salad)
+    assert_equal [couscous_salad], potluck.get_all_from_category(:appetizer)
+    potluck.add_dish(summer_pizza)
+    assert_equal [couscous_salad, summer_pizza], potluck.get_all_from_category(:appetizer)
+    assert_equal [], potluck.get_all_from_category(:entre)
+    potluck.add_dish(roast_pork)
+    assert_equal [roast_pork], potluck.get_all_from_category(:entre)
   end
 
 end
