@@ -37,8 +37,8 @@ class Potluck
 
   end
 
-  def ratio
-
+  def ratio(category)
+    return ((menu[category].length.to_f / length) * 100).round(2)
   end
 
 end
