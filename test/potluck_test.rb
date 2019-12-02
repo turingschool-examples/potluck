@@ -88,7 +88,7 @@ class PotluckTest < Minitest::Test
     potluck.add_dish(cocktail_meatballs)
     potluck.add_dish(candy_salad)
     potluck.add_dish(bean_dip)
-    require "pry"; binding.pry
+
     assert_equal 50.0, potluck.ratio(:appetizer)
   end
 end
