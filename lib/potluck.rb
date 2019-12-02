@@ -10,4 +10,8 @@ class Potluck
     @dishes << dish
   end
 
+  def length
+    dishes.length
+  end
+
 end
