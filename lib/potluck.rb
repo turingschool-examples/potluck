@@ -30,7 +30,9 @@ class Potluck
     end
 
     categories.each do |category|
-      return_menu[category] = dishes.find_all { |dish| dish.category == category }
+      category_items = dishes.find_all{|dish| dish.category == category}
+      category_items = category_items.sort_by{|item| item.name}
+      return_menu[category] = category_items
     end
 
     return return_menu

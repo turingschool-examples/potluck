@@ -70,7 +70,7 @@ class PotluckTest < Minitest::Test
     potluck.add_dish(cocktail_meatballs)
     potluck.add_dish(candy_salad)
     potluck.add_dish(bean_dip)
-    appetizers = [couscous_salad, summer_pizza, bean_dip]
+    appetizers = [bean_dip, couscous_salad, summer_pizza]
     assert_equal appetizers, potluck.menu[:appetizer]
   end
 
