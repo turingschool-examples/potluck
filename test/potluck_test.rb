@@ -62,9 +62,6 @@ class PotluckTest < MiniTest::Test
   end
 end
 
-# pry(main)> potluck.menu
-# # => {:appetizers=>["Bean Dip", "Couscous Salad", "Summer Pizza"],:entres=>["Cocktail Meatballs", "Roast Pork"],:desserts=>["Candy Salad"]}
-#
 # pry(main)> potluck.ratio(:appetizer)
 # #=> 50.0
 # ```
