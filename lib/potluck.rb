@@ -9,4 +9,7 @@ class Potluck
     @dishes << dish
   end
 
+  def get_all_from_category(category)
+    dishes.find_all {|dish| dish.category == category}
+  end
 end
