@@ -8,7 +8,6 @@ class PotluckTest < MiniTest::Test
   def setup
     @potluck = Potluck.new("7-13-18")
     @couscous_salad = Dish.new("Couscous Salad", :appetizer)
-    @cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
     @summer_pizza = Dish.new("Summer Pizza", :appetizer)
     @roast_pork = Dish.new("Roast Pork", :entre)
     @cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
@@ -52,6 +51,7 @@ class PotluckTest < MiniTest::Test
   end
 
   def test_menu_shows_dishes_by_category
+    skip
     @potluck.add_dish(@couscous_salad)
     @potluck.add_dish(@summer_pizza)
     @potluck.add_dish(@roast_pork)
@@ -60,8 +60,15 @@ class PotluckTest < MiniTest::Test
     @potluck.add_dish(@bean_dip)
     assert_equal ({:appetizers=>["Bean Dip", "Couscous Salad", "Summer Pizza"],:entres=>["Cocktail Meatballs", "Roast Pork"],:desserts=>["Candy Salad"]}), @potluck.menu
   end
-end
 
-# pry(main)> potluck.ratio(:appetizer)
-# #=> 50.0
-# ```
+  def test_ratio_of_dish_categories_can_be_calculated
+    @potluck.add_dish(@couscous_salad)
+    @potluck.add_dish(@summer_pizza)
+    @potluck.add_dish(@roast_pork)
+    @potluck.add_dish(@cocktail_meatballs)
+    @potluck.add_dish(@candy_salad)
+    @potluck.add_dish(@bean_dip)
+    assert_equal 50.0, @potluck.ratio(:appetizer)
+    assert_equal 33.3, @potluck.ratio(:entre)
+  end
+end
