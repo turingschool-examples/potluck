@@ -6,8 +6,8 @@ class Potluck
     @dishes = []
   end
 
-  #def next_method
-    #code
-  #end
+  def add_dish(dish)
+    @dishes << dish
+  end
 
 end
