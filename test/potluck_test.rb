@@ -11,9 +11,10 @@ class PotluckTest < Minitest::Test
     assert_instance_of Potluck, potluck
   end
 
-  def test_it_has_date
+  def test_it_has_attributes
     potluck = Potluck.new("7-13-18")
     assert_equal "7-13-18", potluck.date
+    assert_equal [], potluck.dishes
   end
 
   def test_it_can_add_dishes
@@ -35,6 +36,24 @@ class PotluckTest < Minitest::Test
     potluck.add_dish(couscous_salad)
     potluck.add_dish(cocktail_meatballs)
     assert_equal 2, potluck.dishes.length
+  end
+
+  def test_it_can_get_all_from_category
+    potluck = Potluck.new("7-13-18")
+    couscous_salad = Dish.new("Couscous Salad", :appetizer)
+    summer_pizza = Dish.new("Summer Pizza", :appetizer)
+    roast_pork = Dish.new("Roast Pork", :entre)
+    cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
+    candy_salad = Dish.new("Candy Salad", :dessert)
+    potluck.add_dish(couscous_salad)
+    potluck.add_dish(summer_pizza)
+    potluck.add_dish(roast_pork)
+    potluck.add_dish(cocktail_meatballs)
+    potluck.add_dish(candy_salad)
+
+    assert_equal [potluck.dishes[0], potluck.dishes[1]], potluck.get_all_from_category(:appetizer)
+    assert_equal potluck.dishes[0], potluck.get_all_from_category(:appetizer).first
+    assert_equal "Couscous Salad", potluck.get_all_from_category(:appetizer).first.name
   end
 
 end
