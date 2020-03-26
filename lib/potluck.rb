@@ -23,4 +23,8 @@ class Potluck
     category_dishes.map { |dish| dish.name}.sort
   end
 
+  def ratio(category)
+    ((get_all_from_category(category).length / @dishes.length.to_f) * 100).round(1)
+  end
+
 end
