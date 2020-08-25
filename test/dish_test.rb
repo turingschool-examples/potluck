@@ -18,9 +18,4 @@ class DishTest < MiniTest::Test
     assert_equal "Couscous Salad", dish.name
     assert_equal :appetizer, dish.course
   end
-
-  
-
-
-
 end
