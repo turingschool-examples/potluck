@@ -16,4 +16,14 @@ class Test < Minitest::Test
     assert_equal [], @potluck.dishes
   end
 
+  def test_it_can_add_dishes
+    couscous_salad = Dish.new("Couscous Salad", :appetizer)
+    cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
+
+    @potluck.add_dish(couscous_salad)
+    @potluck.add_dish(cocktail_meatballs)
+
+    assert_equal 2, @potluck.dishes.count
+  end
+
 end
