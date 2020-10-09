@@ -3,7 +3,7 @@ require 'minitest/pride'
 require './lib/dish'
 
 
-class Test < Minitest::Test
+class DishTest < Minitest::Test
 
   def setup
     @dish = Dish.new("Couscous Salad", :appetizer)
