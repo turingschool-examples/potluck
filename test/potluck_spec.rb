@@ -34,6 +34,6 @@ RSpec.describe Potluck do
         cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
         potluck.add_dish(couscous_salad)
 
-        expect(potluck.dishes).to eq(couscous_salad)
+        expect(potluck.dishes).to eq([couscous_salad])
     end
 end
