@@ -6,4 +6,16 @@ RSpec.describe Dish do
 
         expect(dish).to be_an_instance_of(Dish)
     end
+
+    it 'returns name' do
+        dish = Dish.new("Couscous Salad", :appetizer)
+
+        expect(dish.name).to eq("Couscous Salad")
+    end
+
+    it 'returns category' do
+        dish = Dish.new("Couscous Salad", :appetizer)
+
+        expect(dish.category).to eq(:appetizer)
+    end
 end
