@@ -24,7 +24,8 @@ class Potluck
         end
         menu
     end
-    # def ratio(categpry)
 
-    # end
+    def ratio(categpry)
+        
+    end
 end
