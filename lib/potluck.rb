@@ -14,4 +14,17 @@ class Potluck
     def get_all_from_category(category)
         @dishes.find_all { |dish| dish.category == category}
     end
+
+    def menu
+        menu = Hash.new{|hash,key| hash[key] = []}
+        @dishes.each do |dish|
+            key_plural = dish.category.to_s + 's'
+            menu[key_plural.to_sym] << dish.name
+            menu[key_plural.to_sym].sort!
+        end
+        menu
+    end
+    # def ratio(categpry)
+
+    # end
 end
