@@ -36,9 +36,8 @@ RSpec.describe Potluck do
         expect(@potluck.dishes[1]).to eq(@cocktail_meatballs)
     end
 
+    it 'has number of items' do
+      expect(@potluck.dishes.length).to eq 2
+    end
   end
-
-
-
-
 end
