@@ -13,4 +13,8 @@ RSpec.describe Dish do
   it "has a name" do
     expect(@dish.name).to eq("Couscous Salad")
   end
+
+  it "has a category" do
+    expect(@dish.category).to eq(:appetizer)
+  end
 end
