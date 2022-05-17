@@ -38,7 +38,7 @@ RSpec.describe Potluck do
     expect(@potluck.dishes[1]).to eq(cocktail_meatballs)
   end
 
-  xit "can count Dishes" do
+  it "can count Dishes" do
     couscous_salad = Dish.new("Couscous Salad", :appetizer)
     cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
     @potluck.add_dish(couscous_salad)
