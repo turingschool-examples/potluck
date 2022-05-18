@@ -2,6 +2,6 @@ class Dish
   attr_reader :name, :appetizer, :category
   def initialize(name, category)
     @name = name
-    @category = :appetizer
+    @category = category
   end
 end
