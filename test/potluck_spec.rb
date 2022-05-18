@@ -24,18 +24,39 @@ RSpec.describe Potluck do
     expect(@dish).to eq(@dish)
   end
 
+  it "has a dish called Summer Pizza" do
+    summer_pizza = Dish.new("Summer Pizza", :appetizer)
+    expect(@dish).to eq(@dish)
+  end
+
+  it "has a dish called Roast Pork" do
+    roast_pork = Dish.new("Roast Pork", :entre)
+    expect(@dish).to eq(@dish)
+  end
+
   it "has a dish called Cocktail Meatballs" do
     cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
+    expect(@dish).to eq(@dish)
+  end
+
+  it "has a dish called Candy Salad" do
+    candy_salad = Dish.new("Candy Salad", :dessert)
     expect(@dish).to eq(@dish)
   end
 
   it "can add dishes to dishes array" do
     couscous_salad = Dish.new("Couscous Salad", :appetizer)
     cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
+    summer_pizza = Dish.new("Summer Pizza", :appetizer)
+    roast_pork = Dish.new("Roast Pork", :entre)
+    candy_salad = Dish.new("Candy Salad", :dessert)
     potluck = Potluck.new("7-13-18")
     potluck.add_dish(couscous_salad)
+    potluck.add_dish(summer_pizza)
+    potluck.add_dish(roast_pork)
     potluck.add_dish(cocktail_meatballs)
-    expect(potluck.dishes).to eq([couscous_salad, cocktail_meatballs])
+    potluck.add_dish(candy_salad)
+    expect(potluck.dishes).to eq([couscous_salad, summer_pizza, roast_pork, cocktail_meatballs, candy_salad])
 
   end
 
