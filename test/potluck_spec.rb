@@ -17,4 +17,14 @@ RSpec.describe Potluck do
     expect(potluck.dishes).to eq([])
   end
 
+  it "has a dish called Couscous Salad" do
+    couscous_salad = Dish.new("Couscous Salad", :appetizer)
+    expect(@dish).to eq(@dish)
+  end
+  
+  it "has a dish called Cocktail Meatballs" do
+    cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
+    expect(@dish).to eq(@dish)
+  end
+
 end
